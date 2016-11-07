@@ -1,3 +1,8 @@
 <style>
-bakground
+body {
+        background-image:url("images.jpg")
+      }
+      h1 {
+        color: green;
+      }
 </style>
