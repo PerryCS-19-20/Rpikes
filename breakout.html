@@ -156,7 +156,12 @@ function paddle(e){
     pad.setPosition(e.getX(),450);
 }
 
-       </script>
+        if (typeof start === 'function') {
+                            start();
+                        }
+                    };
+  	</script>
+
            <style>
 			canvas {
     				border: 1px solid black;
