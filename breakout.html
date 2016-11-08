@@ -1,0 +1,178 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Breakout</title>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+       <script type="text/javascript" src="/chs.js"></script>
+       <script>
+           var NUM_ROWS = 8;
+var BRICK_TOP_OFFSET = 10;
+var BRICK_SPACING = 2;
+var NUM_BRICKS_PER_ROW = 10;
+var BRICK_HEIGHT = 10;
+var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
+var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
+
+/* Constants for ball and paddle */
+var PADDLE_WIDTH = 80;
+var PADDLE_HEIGHT = 15;
+var PADDLE_OFFSET = 10;
+
+var BALL_RADIUS = 15;
+
+var ball;
+var dx = 4;
+var dy = 4;
+var pad;
+pad = new Rectangle(PADDLE_WIDTH,PADDLE_HEIGHT);
+function start(){
+    drawBricks();
+    drawBricks2();
+    drawBricks3();
+    drawBricks4();
+    drawBricks5();
+    drawBricks6();
+    drawBricks7();
+    drawBricks8();
+    setTimer(draw,20);
+    ball = new Circle(BALL_RADIUS);
+	ball.setPosition(getWidth() / 2,getHeight() / 2 );
+	add(ball);
+	add(pad);
+	mouseMoveMethod(paddle);
+	println("You win");
+}
+function drawBricks(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET);
+        rect.setColor(Color.red);
+        add(rect);
+    }
+}    
+function drawBricks2(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET +12);
+        rect.setColor(Color.red);
+        add(rect);
+    }
+}    
+function drawBricks3(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET +24);
+        rect.setColor(Color.orange);
+        add(rect);
+    }
+}    
+function drawBricks4(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET +36);
+        rect.setColor(Color.orange);
+        add(rect);
+    }
+}    
+function drawBricks5(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET +48);
+        rect.setColor(Color.green);
+        add(rect);
+    }
+}    
+function drawBricks6(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET +60);
+        rect.setColor(Color.green);
+        add(rect);
+    }
+}
+function drawBricks7(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET +72);
+        rect.setColor(Color.blue);
+        add(rect);
+    }
+}    
+function drawBricks8(){
+    for(var i = 0; i < 10; i++){
+        var rect = new Rectangle(BRICK_WIDTH,BRICK_HEIGHT);
+        rect.setPosition(2+i*(BRICK_WIDTH+BRICK_SPACING), BRICK_TOP_OFFSET +84);
+        rect.setColor(Color.blue);
+        add(rect);
+    }
+}    
+function draw(){
+	checkWalls();
+	ball.move(dx, dy);
+	bounce();
+}
+
+function checkWalls(){
+	// Bounce off right wall
+	if(ball.getX() + ball.getRadius() > getWidth()){
+		dx = -dx;
+	}
+	
+	// Bounce off left wall
+	if(ball.getX() - ball.getRadius() < 0){
+		dx = -dx;
+	}
+	if(ball.getY() - ball.getRadius() > getHeight()){
+	    println("gameover");
+	}
+	// Bounce off top wall
+	if(ball.getY() - ball.getRadius() < 0){
+		dy = -dy;
+	}	
+}
+function bounce(){
+    var elem = getElementAt(ball.getX(),ball.getY() + 15);
+    if (elem == pad){
+        dy = -dy;
+    }else if(elem != null){
+        dy = -dy;
+        remove(elem);
+    }
+    elem = getElementAt(ball.getX(),ball.getY() - 15);
+    if (elem != null){
+        dy = -dy;
+        remove(elem);
+    }
+}
+function paddle(e){
+    pad.setPosition(e.getX(),450);
+}
+
+       </script>
+           <style>
+			canvas {
+    				border: 1px solid black;
+			}
+		</style>
+
+    </head>
+    <body>
+        <div id="canvasContainer" width="100%" style="width: 100%; height: 100%; overflow: hidden;">
+			<canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
+		</div>
+		<script>
+			window.onload = function() {
+				if (typeof start === 'function') {
+        					start();
+    				}
+			};
+		</script>
+
+    </body>
+</html>
