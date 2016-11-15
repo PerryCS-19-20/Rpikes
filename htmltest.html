@@ -5,15 +5,18 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
     </head>
     <body>
         <textarea rows = "10" cols="80" id = "inputText">Input html to test here</textarea>
-        <button onclick ="testHTML();">Test</button>
-        <span id = "s1" onclick = "testHtml();">America</span>
+        <button onclick ="testHTML();">American power</button>
+        <span id = "s1" onclick = "testHtml();"></span>
+        <script>
         function testHTML(){
             var userInput = document.getElementById("inputText");
             var theSpan = document.getElementById("s1");
             theSpan.innerHTML = userInput.value;
         }
+        </script>
     </body>
 </html>
