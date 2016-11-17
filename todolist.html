@@ -1,0 +1,25 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create an element</title>
+        <meta charset ="utf-8">
+        <meta name ="viewport" content="width=device-width">
+    </head>
+    <body>
+<textarea rows = "10" cols="80" id = "inputText">I can see a wall rising</textarea>
+        <button onclick ="testHTML();">American power</button>
+        <span id = "homeSpan" onclick = "testHtml();"></span>
+        <script>
+        function testHTML(){
+            var span = document.getElementById("homeSpan");
+            var bold = document.createElement("b");
+            bold.textContent = "I will";
+            span.appendChild(bold);
+        }
+        </script>
+         </body>
+</html>
