@@ -12,12 +12,12 @@ and open the template in the editor.
     <body>
 <textarea rows = "10" cols="80" id = "inputText">I can see a wall rising</textarea>
         <button onclick ="testHTML();">American power</button>
-        <span id = "homeSpan" onclick = "testHtml();"></span>
+        <ul id = "listArea" onclick = "testHtml();"></ul>
         <script>
         function testHTML(){
-            var span = document.getElementById("homeSpan");
-            var bold = document.createElement("b");
-            bold.textContent = "I will";
+            var span = document.getElementById("listArea");
+            var unorderedList = document.createElement("ul");
+            list.textContent = span.values;
             span.appendChild(bold);
         }
         </script>
