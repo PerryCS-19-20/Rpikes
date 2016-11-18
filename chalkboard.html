@@ -1,0 +1,29 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create an element</title>
+        <meta charset ="utf-8">
+        <meta name ="viewport" content="width=device-width">
+    </head>
+    <body>
+<textarea rows = "10" cols="80" id = "inputText">I can see a wall rising</textarea>
+        <button onclick ="testHTML();">American power</button>
+        <ul id = "listArea"></ul>
+        <script>
+        function testHTML(){
+        for(var i = 0; i < 100; i++){    
+            var things = document.getElementById("inputText");
+            var span = document.getElementById("listArea");
+            var unorderedList = document.createElement("li");
+            unorderedList.textContent = things.value;
+            span.appendChild(unorderedList);
+            unorderedList.textContent ="I will not" + li.value;
+                }  
+            }
+        </script>
+         </body>
+</html>
