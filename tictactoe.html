@@ -36,16 +36,19 @@ and open the template in the editor.
             </tr>
         </table>
         <script>
-            var player = "X"
+            var player = "X";
         function play(cellId) {
-           var cell = document.getElementById(cellId)
-            if(cell.textContent == "") {
+           var cell = document.getElementById(cellId);
+            if(cell.textContent === "") {
                 cell.textContent = player;
             }
             if(player === "X"){
-                player = "O"
+                player = "O";
             }else {
-                player = "X"
+                player = "X";
+            }
+            if(cell = player){
+        cell.style.backgroundImage = "images.jpg";
             }
         }
         </script>
