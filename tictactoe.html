@@ -10,12 +10,12 @@ and open the template in the editor.
         <style>
             
             td {
-                font-size: 100px;
+                font-size: 200px;
                 height: 300px;
                 width: 300px;
             }
         </style>
-        var player = "X"
+        
     </head>
     <body>
         <table border ="1">
@@ -27,7 +27,7 @@ and open the template in the editor.
             <tr>
                 <td id = "4" onclick = "play('4');" ></td>
                 <td id = "5" onclick = "play('5');" ></td>
-                <td id = "6" onclick = "play('3');"></td>
+                <td id = "6" onclick = "play('6');"></td>
             </tr>
             <tr>
                 <td id = "7" onclick = "play('7');" ></td>
@@ -35,8 +35,19 @@ and open the template in the editor.
                 <td id = "9" onclick = "play('9');" ></td>
             </tr>
         </table>
-        function play() {
-        
+        <script>
+            var player = "X"
+        function play(cellId) {
+           var cell = document.getElementById(cellId)
+            if(cell.textContent == "") {
+                cell.textContent = player;
+            }
+            if(player === "X"){
+                player = "O"
+            }else {
+                player = "X"
+            }
         }
+        </script>
     </body>
 </html>
