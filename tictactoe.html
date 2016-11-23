@@ -41,14 +41,33 @@ and open the template in the editor.
            var cell = document.getElementById(cellId);
             if(cell.textContent === "") {
                 cell.textContent = player;
+                checkWin();
             }
             if(player === "X"){
                 player = "O";
             }else {
-                player = "X";
+                player = "X";          
             }
-            if(cell = player){
-        cell.style.backgroundImage = "images.jpg";
+        }
+        function checkWin() {
+            check3Cells("1","2","3");
+            check3Cells("4","5","6");
+            check3Cells("7","8","9");
+            check3Cells("1","4","7");
+            check3Cells("2","5","8");
+            check3Cells("3","6","9");
+            check3Cells("1","5","9");
+            check3Cells("3","5","7");
+        }
+        function check3Cells(c1id,c2id,c3id){
+            var c1 = document.getElementById(c1id);
+            var c2 = document.getElementById(c2id);
+            var c3 = document.getElementById(c3id);
+            if((c1.textContent === c2.textContent) && (c2.textContent === c3.textContent) && (c1.textContent !== "")) {
+                won = true;
+                c1.style.backgroundImage= "url(images.jpg)";
+                c2.style.backgroundImage= "url(images.jpg)";
+                c3.style.backgroundImage= "url(images.jpg)";
             }
         }
         </script>
