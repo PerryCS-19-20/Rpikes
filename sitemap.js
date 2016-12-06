@@ -15,6 +15,7 @@ function buildMap(eleid) {
     subList.appendChild(item("Tic Tac Toe","tictactoe.html"));
     subList.appendChild(item("Multiplication","table.html"));
     subList.appendChild(item("More Multiplication","multiplicationtable.html"));
+    subList.appendChild(item("Calculator","calculator.html"));
     list.appendChild(subList);
     space.appendChild(list);
     }
