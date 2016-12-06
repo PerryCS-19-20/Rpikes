@@ -17,14 +17,14 @@ and open the template in the editor.
             }
         </style>
     </head>
-    <body onload="buildTimesTable()">
+    <body onload="buildTimesTable();">
         <h1>Multiplication Table</h1>
-        Table Width:<input type="range" id="tableWidth" min="10" max="101" value="101" onchange="buildTimeTable();"><br>
-        Table Height:<input type="range" id="tableWidth" min="10" max="101" value="101" onchange="buildTimeTable();"><br>
+        Table Width:<input type="range" id="tableWidth" min="10" max="101" value="101" onchange="buildTimesTable();"><br>
+        Table Height:<input type="range" id="tableHeight" min="10" max="101" value="101" onchange="buildTimesTable();"><br>
         <script>
             function buildTimesTable() {
                 // Create a table for the multiplication table
-                var timesTable = document.createElement("table");
+                var timesTable = document.getElementById("timesTable");
                 if(timesTable !== null) {
                     timesTable.parentNode.removeChild(timesTable);
                 }
@@ -49,7 +49,7 @@ and open the template in the editor.
                                 cell = document.createElement("th");
                                 cell.textContent = i;
                             }else{
-                                ell = document.createElement("td");
+                                cell = document.createElement("td");
                                 cell.textContent = a*i;
                         }
                         }
