@@ -19,14 +19,38 @@
         <script>
             function buildTimesTable() {
                 // Create a table for the multiplication table
-                var timesTable = document.createElement("table");
+                var timesTable = document.getElementById("timesTable");
+                if(timesTable !== null) {
+                    timesTable.parentNode.removeChild(timesTable);
+                }
+                timesTable = document.createElement("table");
                 timesTable.id = "timesTable";
-                
-                // Add the table to the document's body
                 var body = document.body;
                 body.appendChild(timesTable);
-                
-                // Fill in the multiplication table
+                var width = document.getElementById("tableWidth").value;
+                var height = document.getElementById("tableHeight").value;
+                for(var i=0; i < height; i++) {
+                    var tableRow = document.createElement("tr");
+                    timesTable.appendChild(tableRow);
+                    for(var a=0; a < width; a++) {
+                        var cell;
+                        if(i === 0) {
+                            cell= document.createElement("th");
+                            if(a>0) {
+                                cell.textContent = a;
+                            }
+                        }else{
+                            if(a === 0) {
+                                cell = document.createElement("th");
+                                cell.textContent = i;
+                            }else{
+                                cell = document.createElement("td");
+                                cell.textContent = a*i;
+                        }
+                        }
+                        timesTable.appendChild(cell);
+                    }
+                }
             }
         </script>
     </body>
