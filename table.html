@@ -16,8 +16,10 @@
         </style>
     </head>
     <body onload="buildTimesTable();">
+        Table Width:<input type="range" id="tableWidth" min="10" max="101" value="101"><br>
+        Table Height:<input type="range" id="tableHeight" min="10" max="101" value="101"><br>
         <script>
-            function buildTimesTable() {
+             function buildTimesTable() {
                 // Create a table for the multiplication table
                 var timesTable = document.getElementById("timesTable");
                 if(timesTable !== null) {
