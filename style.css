@@ -1,6 +1,9 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <style>
+        body {
+        color:green
+        }
         hr {
         color: red;
         }
