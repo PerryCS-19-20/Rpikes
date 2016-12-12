@@ -6,7 +6,13 @@
         Purpose of the stylesheet follows.
 */
 
-root { 
-    display: block;
+body {
+    background-color: red;
+    font-family: fantasy;
 }
-
+ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
