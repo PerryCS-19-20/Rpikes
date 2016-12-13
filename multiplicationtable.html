@@ -17,8 +17,12 @@ and open the template in the editor.
                 text-align: right;
             }
         </style>
-    </head>
+    <link rel="stylesheet" type="text/css" href="menu.css">
+        <script src="sitemap.js"></script>
+  </head>
     <body onload="buildTimesTable();">
+        onload="buildMap('sitemapWrapper');"
+      <div id="sitemapWrapper"></div>
         <h1>Multiplication Table</h1>
         Table Width:<input type="range" id="tableWidth" min="10" max="101" value="101" onchange="buildTimesTable();"><br>
         Table Height:<input type="range" id="tableHeight" min="10" max="101" value="101" onchange="buildTimesTable();"><br>
