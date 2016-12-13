@@ -2,7 +2,7 @@
 
 
 /* div or span that contains the menu list */
-#menubar {
+#sitemapWrapper {
 	position: relative;
 	padding: 0px;
 	display: block;
@@ -11,7 +11,7 @@ background-color: red;
 
 
 /* class on a list that makes up the menu */
-#menubar > ul {
+#sitemapWrapper > ul {
 	position: relative;
 	display:  inline-block;
 	text-decoration: none;
@@ -22,19 +22,19 @@ background-color: red;
 
 
 /* top-level menu as a bar across page */
-#menubar > ul > li {
+#sitemapWrapper > ul > li {
 display: inline-block;
 padding: 8px;
 }
 
 
 /* no bullets on menu items */ 
-#menubar ul li {
+#sitemapWrapper ul li {
 	list-style: none;
 text-indent: 0px;
 }
 /* hide dropdown menus - sublists */
-#menubar ul ul {
+#sitemapWrapper ul ul {
 	display: none;
 	position: absolute;
 background-color: lightgrey;
@@ -43,15 +43,15 @@ padding: 0px;
 
 
 /* Show dropdown when hovering over its menu */
-#menubar ul li:hover ul,
-#menubar ul li:focus ul,
-#menubar ul li:active ul {
+#sitemapWrapper ul li:hover ul,
+#sitemapWrapper ul li:focus ul,
+#sitemapWrapper ul li:active ul {
 	display: block;
 }
 
 
 /* Make menu links look normal */
-#menubar a {
+#sitemapWrapper a {
 	display: block;
 color: black;
 	padding: 8px;
@@ -60,7 +60,7 @@ color: black;
 
 
 /* Change the link color on hover */
-#menubar ul ul li a:hover {
+#sitemapWrapper ul ul li a:hover {
 	background-color: blueviolet;
 	color: greenyellow;
 }
