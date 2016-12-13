@@ -12,10 +12,11 @@ and open the template in the editor.
                             document.body.style.backgroundColor = colorName;
 			}	
 		</script>
-	</head>
-
-
-	<body>
+	<link rel="stylesheet" type="text/css" href="menu.css">
+        <script src="sitemap.js"></script>
+  </head>
+  <body onload="buildMap('sitemapWrapper');">
+      <div id="sitemapWrapper"></div>
 		<span onmouseover="moving('red');">Do you need a change in life</span>
 	</body>
 </html>
