@@ -17,8 +17,11 @@ and open the template in the editor.
             }
         </style>
         
-    </head>
-    <body>
+    <link rel="stylesheet" type="text/css" href="menu.css">
+        <script src="sitemap.js"></script>
+  </head>
+  <body onload="buildMap('sitemapWrapper');">
+      <div id="sitemapWrapper"></div>
         <table border ="1">
             <tr>
                 <td id ="1" onclick = "play('1');"></td>
