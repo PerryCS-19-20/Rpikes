@@ -9,8 +9,11 @@ and open the template in the editor.
         <meta charset ="utf-8">
         <meta name ="viewport" content="width=device-width">
         <script>src="sitemap.js";</script>
-    </head>
-    <body>
+    <link rel="stylesheet" type="text/css" href="menu.css">
+        <script src="sitemap.js"></script>
+  </head>
+  <body onload="buildMap('sitemapWrapper');">
+      <div id="sitemapWrapper"></div>
 <textarea rows = "10" cols="80" id = "inputText">I can see a wall rising</textarea>
         <button onclick ="testHTML();">American power</button>
         <ul id = "listArea"></ul>
